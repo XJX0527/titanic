@@ -1,0 +1,13 @@
+将连续数据进行离散化处理
+#介绍在本数据分析中运用到的方法
+1.one-hot编码
+ADf=pd.get_dummies(ADf,prefix='A')   #将其进行one-hot编码
+data=pd.conat([data,ADf],axis=1)     #再将编码完成的列合并到原数据集中
+data=fata.drop('A',axis=1,inplace=True) #删除原列
+2.对数据进行映射处理
+familyDf['Family_Single']=familyDf['FamilySize'].map(lambda s:1 if s==1 else 0)
+familyDf['Family_Small']=familyDf['FamilySize'].map(lambda s:1 if 2<=s<=4 else 0)
+familyDf['Family_Large']=familyDf['FamilySize'].map(lambda s:1 if s>=5 else 0)
+3.
+A_mapDict={'A1':0,'A2':1}
+data['A']=data['A'].map(A_mapDict)
