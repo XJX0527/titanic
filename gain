@@ -1,0 +1,40 @@
+#Python语法---简单
+data.info()   #展示数据集中每个因子的描述，eg.数据量，数据类型...
+data.descirbe()   #对数据集中每个元素进行具体描述，eg.最大值、最小值...
+data.head()   #展示前五行数据
+data.shape    #展示数据行、列数
+data1.append(data2)  #将数据集2合并到数据集1中
+pd.concat([data1,data2
+data['A'].value_counts()  #data数据集中A列数据中每个元素的频数统计------<import pandas as pd>包
+Counter(data['A'])   #data数据集中列A每个元素的频数------<from collections import Couner>
+data['A']=data['A'].fillna('B')  #data数据集中列A中的缺失值用B填充
+data.drop('A',axis=1,inplace=True)  #删除data数据集中的列A
+data=pd.read_csv(r"数据地址.csv")   #导入数据
+data.to_csv(r'数据地址.csv',index=False)  #导出数据
+
+#Python语法---数据可视化：import matplotlib.pyplot as plt
+#设置画布
+plt.figure()
+plt.subplot(2,2,i)  #该画布为2*2，i表示将此次绘制的图放入2*2中的第i个位置
+plt.hist(x='A',y='B',data=data1)
+plt.show()
+plt.grid()   #网格线设置
+#美观设置
+alpha=   #线条透明度（0.0~1.0）
+color=
+fillstyle=  #线条填充样式：
+linestyle=  #线条样式：实现、虚线...
+marker=     #标记点样式：
+#折线图---plot()
+plt.plot(x='A',y='B',data=data1)     #数据集data1中列A与列B做折线图：A为横轴，B为纵轴
+#条形图---barplot()
+sns.barplot(x='A',y='B',data=data1)  #数据集data1中列A与列B做条形图：A为横轴，B为纵轴
+#柱形图---bar()
+plt.bar(x='A',y='B',data=data1)
+#直方图---hist()
+plt.hist(x='A',y='B',data=data1)
+#散点图----scatter()
+plt.scatter(x='A',y='B',data=data1)
+#饼图----pie()
+plt.pie(x='A',data=data1,axis='equal')
+
